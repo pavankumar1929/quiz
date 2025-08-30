@@ -756,3 +756,113 @@
       background-color: #0D47A1; /* Even darker for active state */
       transform: scale(0.98);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+    .subject-card {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 370px; /* Matches the image height */
+  width: 360px; /* Matches the approximate image width */
+}
+
+.subject-image {
+  height: 200px; /* Retain original height for image section */
+  overflow: hidden;
+}
+
+.subject-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.subject-card:hover .subject-image img {
+  transform: scale(1.1);
+}
+
+.subject-info {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .subjects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+  
+  .subject-card {
+    height: 350px; /* Maintain fixed height */
+    width: 300px; /* Maintain fixed width */
+  }
+  
+  .subject-image {
+    height: 260px;
+  }
+}
+
+@media (max-width: 992px) {
+  .subjects-grid {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+  }
+  
+  .subject-card {
+    height: 400px; /* Maintain fixed height */
+    width: 300px; /* Maintain fixed width */
+  }
+  
+  .subject-image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .subjects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .subject-card {
+    height: 200px; /* Maintain fixed height */
+    width: 150px; /* Maintain fixed width */
+  }
+  
+  .subject-image {
+    height: 260px;
+  }
+}
+
+@media (max-width: 480px) {
+  .subject-card {
+    height: 350px; /* Maintain fixed height */
+    width: 100%; /* Allow full width on smaller screens */
+    max-width: 200px; /* Limit max width to match image */
+  }
+  
+  .subject-image {
+    height: 150px;
+  }
+}
